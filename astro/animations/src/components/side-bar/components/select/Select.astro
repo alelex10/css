@@ -1,23 +1,33 @@
 ---
-import type { options } from "../../types/optionTypes";
+import type { menu, options } from "../../types/sideBarTypes";
 
 interface Props {
-	options: options[];
+	menu: menu[];
 }
-const { options }: Props = Astro.props;
+const { menu }: Props = Astro.props;
 ---
 
-<!-- select -->
-<button class:list={["sidebar__select", `block px-2 py-1 rounded hover:bg-gray-700 hover:text-white cursor-pointer`]}>
-	<b><slot /></b>
-</button>
-<!-- menu -->
-<div class={`flex flex-col menu__option`}>
+<div>
 	{
-		options.map((option) => (
-			<a class="block px-2 rounded hover:bg-gray-700 hover:text-white cursor-pointer ml-3" href={option.link}>
-				{option.name}
-			</a>
+		menu.map((menu) => (
+			<div>
+				<button
+					class:list={["sidebar__select", `block px-2 py-1 rounded hover:bg-gray-700 hover:text-white cursor-pointer w-full text-left`]}
+				>
+					<b>{menu.title}</b>
+				</button>
+
+				<div class="menu__option hidden">
+					{menu.options.map((option) => (
+						<a
+							href={option.link}
+							class:list={[`block px-2 py-1 rounded hover:bg-gray-700 hover:text-white cursor-pointer`]}
+						>
+							{option.name}
+						</a>
+					))}
+				</div>
+			</div>
 		))
 	}
 </div>
@@ -27,6 +37,7 @@ const { options }: Props = Astro.props;
 	const $menu = document.querySelector(".menu__option");
 
 	const toggleMenu = () => {
+		/* toggle: si tiene la clase hidden la quita, si no la pone */
 		$menu?.classList.toggle("hidden");
 	};
 
