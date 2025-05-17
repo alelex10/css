@@ -11,9 +11,6 @@
       "@/*": [
         "src/*"
       ],
-      /* para que vsc me autocomplete las rutas desde el directorio pages al escribir / */
-      /* * : es para que vsc me autocomplete todas las rutas disponibles, sino no lo hace*/
-      /* si coloco src/pages no me recomienda las demas rutas y temina en /pages */
       "/*": [
         "src/pages/*"
       ]

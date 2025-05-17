@@ -1,5 +1,5 @@
 ---
-import type { menu, options } from "../../types/sideBarTypes";
+import type { menu } from "../../types/sideBarTypes";
 
 interface Props {
 	menu: menu[];
@@ -11,17 +11,21 @@ const { menu }: Props = Astro.props;
 	{
 		menu.map((menu) => (
 			<div>
+				{/* MENU TITLE */}
 				<button
-					class:list={["sidebar__select", `block px-2 py-1 rounded hover:bg-gray-700 hover:text-white cursor-pointer w-full text-left`]}
+					class:list={[
+						"sidebar__select",
+						`block rounded hover:bg-gray-700 hover:text-white cursor-pointer w-full text-left`,
+					]}
 				>
-					<b>{menu.title}</b>
+					<h5>{menu.title}</h5>
 				</button>
-
-				<div class="menu__option hidden">
+				{/* MENU OPTIONS */}
+				<div class="menu__option hidden pl-2.5 border-l-[1px] text-sm">
 					{menu.options.map((option) => (
 						<a
 							href={option.link}
-							class:list={[`block px-2 py-1 rounded hover:bg-gray-700 hover:text-white cursor-pointer`]}
+							class:list={[`block rounded hover:bg-gray-700 hover:text-white cursor-pointer`]}
 						>
 							{option.name}
 						</a>
@@ -33,13 +37,19 @@ const { menu }: Props = Astro.props;
 </div>
 
 <script>
-	const $select = document.querySelector(".sidebar__select");
-	const $menu = document.querySelector(".menu__option");
+	const $selects = document.querySelectorAll(".sidebar__select");
+	// const $menus = document.querySelectorAll(".menu__option");
 
-	const toggleMenu = () => {
+	const toggleMenu = (menu: Element) => {
 		/* toggle: si tiene la clase hidden la quita, si no la pone */
-		$menu?.classList.toggle("hidden");
+		menu?.classList.toggle("hidden");
 	};
 
-	$select?.addEventListener("click", toggleMenu);
+	$selects.forEach((select) => {
+		let $menu = select.nextElementSibling;
+
+		select.addEventListener("click", () => {
+			$menu && toggleMenu($menu);
+		});
+	});
 </script>

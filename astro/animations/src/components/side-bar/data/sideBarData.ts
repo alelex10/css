@@ -1,16 +1,43 @@
-import type { menu} from "../types/sideBarTypes";
+import type { menu } from "../types/sideBarTypes";
 
 export const sideBarData: menu[] = [
+	
 	{
-		title: "asd",
+		title: "markdown",
 		options: [
 			{
-				name: "Home",
-				link: "/",
+				name: "ejemplos",
+				link: "/marckdown/MarkDownSection",
+			},
+			{
+				name: "text",
+				link: "/ux-ui/text/TextSection",
+			},
+		],
+	},
+	{
+		title: "rutas",
+		options: [
+			{
+				name: "configuration",
+				link: "/routing/configured/Comfiguration",
 			},
 			{
 				name: "About",
 				link: "/about",
+			},
+		],
+	},
+	{
+		title: "ux-ui",
+		options: [
+			{
+				name: "color",
+				link: "/ux-ui/color/ColorSection",
+			},
+			{
+				name: "text",
+				link: "/ux-ui/text/TextSection",
 			},
 		],
 	},

@@ -11,8 +11,11 @@ import "../styles/global.css";
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class="">
-        <SideBar></SideBar>
-		<slot />
+	<body class="bg-bg-primary text-text-primary min-h-screen flex">
+		<SideBar />
+		<section class="py-6 mx-auto">
+			<slot />
+		</section>
 	</body>
 </html>
+<style></style>

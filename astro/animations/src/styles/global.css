@@ -1,56 +1,143 @@
 @import "tailwindcss";
+:root {
+	--spacing-extra: 2rem;
+	--spacing-between: 1.5rem;
+}
+h1 {
+	position: relative;
+	font-size: 3rem;
+	left: calc(var(--spacing-extra) / 2.5);
+	font-weight: 500;
+	line-height: 1.1;
+	display: inline-block;
+	margin-bottom: calc(var(--spacing-extra) / 2);
+	/** Underline arcoiris */
+	&::after {
+		content: "";
+		width: calc(100% + var(--spacing-extra));
+		position: absolute;
+		left: calc(var(--spacing-extra) / -2.5);
+		bottom: -var(--spacing-extra);
+		height: 2px;
+		background: linear-gradient(to right in oklch longer hue, red, orange);
+		display: block;
+		border-radius: 30%;
+		z-index: -1;
+	}
+}
+h2 {
+	font-size: 2rem;
+	font-weight: 500;
+	line-height: 1.1;
+	margin-bottom: var(--spacing-between);
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+}
+h3 {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+h4 {
+	font-size: 1.2rem;
+	font-weight: 500;
+	&::first-letter {
+		text-transform: uppercase;
+	}
+}
+h5 {
+	font-size: 1rem;
+	font-weight: 500;
+
+	&::first-letter {
+		text-transform: uppercase;
+	}
+}
+pre {
+	
+	font-size: 14px;
+	line-height: 1.4;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	background-color: #f0f0f0;
+	margin: calc(var(--spacing-between) / 2) 0;
+}
+ul {
+	margin: 3px 3px 3px 3px;
+}
+li {
+	margin: 0;
+	margin-left: var(--spacing-extra);
+	list-style: circle;
+}
+section {
+	max-width: 75ch;
+}
+hr {
+	margin: var(--spacing-between);
+}
+/* TABLE */
+table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: calc(var(--spacing-extra)) 0;
+}
+
+.table-container {
+	overflow-x: auto;
+	padding: 1rem;
+}
+
+th,
+td {
+	padding: 1rem 1.25rem;
+	text-align: left;
+	vertical-align: middle;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+	font-weight: 600;
+	position: relative;
+	z-index: 1;
+}
+a {
+	color: var(--color-text-link);
+	text-decoration: none;
+}
+
+/** Estilos responsivos para móviles */
+@media (max-width: 640px) {
+	h1 {
+		font-size: 2rem;
+	}
+	h2 {
+		font-size: 1.5rem;
+	}
+	h3 {
+		font-size: 1.2rem;
+	}
+	section {
+		max-width: 100%;
+		padding: 0 calc(var(--spacing-extra) / 2);
+	}
+	.table-container {
+		overflow-x: scroll;
+	}
+	table {
+		border: 0;
+	}
+	th,
+	td {
+		border-bottom: 1px solid #ddd !important;
+		position: relative;
+		padding: 0.5rem 0;
+	}
+}
 
 @theme {
-	--color-primary: oklch(25% 0.3 240); /* Azul marino */
-	--color-secondary: oklch(18% 0.25 230); /* Azul más oscuro */
-	--color-tertiary: oklch(12% 0.1 250); /* Azul suave */
-	--color-accent: oklch(40% 0.35 170); /* Añil claro */
-	--color-bg: oklch(10% 0.05 210); /* Fondo oscuro */
-
-	--color-base: oklch(80% 0.1 210); /* Blanco suave neutral */
-	--color-muted: oklch(70% 0.05 230); /* Gris claro suave */
-	--color-link: oklch(65% 0.3 170); /* Azul destaco */
-
-	/* Paleta 2: Gris Acero */
-	--color-primary: oklch(30% 0.28 90); /* Verde oscuro */
-	--color-secondary: oklch(22% 0.2 85); /* Verde más oscuro */
-	--color-tertiary: oklch(15% 0.08 100); /* Verde suave */
-	--color-accent: oklch(50% 0.38 60); /* Amarillo claro */
-	--color-bg: oklch(12% 0.03 95); /* Fondo gris oscuro */
-
-	--color-base: oklch(85% 0.05 95); /* Blanco limpio */
-	--color-muted: oklch(75% 0.1 100); /* Gris claro neutro */
-	--color-link: oklch(60% 0.35 60); /* Verde destaco suave */
-
-	/* Paleta 3: Carbón Claro */
-	--color-primary: oklch(20% 0.33 40); /* Rojo oscuro */
-	--color-secondary: oklch(15% 0.2 35); /* Rojo más oscuro */
-	--color-tertiary: oklch(10% 0.12 50); /* Rojo suave */
-	--color-accent: oklch(45% 0.38 45); /* Naranja claro */
-	--color-bg: oklch(8% 0.02 40); /* Fondo casi negro */
-
-	--color-base: oklch(88% 0.1 40); /* Blanco puro */
-	--color-muted: oklch(78% 0.05 45); /* Gris muy claro */
-	--color-link: oklch(55% 0.33 45); /* Naranja suave */
-
-	--color-primary: oklch(28% 0.2 240); /* Azul grisáceo */
-	--color-secondary: oklch(20% 0.15 230); /* Azul más oscuro */
-	--color-tertiary: oklch(12% 0.07 250); /* Azul suave */
-	--color-accent: oklch(55% 0.32 220); /* Azul claro */
-	--color-bg: oklch(10% 0.01 240); /* Fondo oscuro neutro */
-
-	--color-base: oklch(82% 0.05 240); /* Blanco suave */
-	--color-muted: oklch(72% 0.1 230); /* Gris claro */
-	--color-link: oklch(65% 0.32 220); /* Azul claro */
-
-	/* Paleta 5: Piedra Oscura (ajustada para verdes) */
-	--color-primary: oklch(25% 0.22 90); /* Verde oscuro */
-	--color-secondary: oklch(18% 0.18 95); /* Verde más oscuro */
-	--color-tertiary: oklch(12% 0.05 100); /* Verde suave */
-	--color-accent: oklch(40% 0.35 105); /* Verde claro */
-	--color-bg: oklch(1% 0.01 0 ); /* Fondo oscuro */
-
-	--color-base: oklch(100 .01 90); /* Blanco limpio */
-	--color-muted: oklch(75% 0.1 50); /* Gris suave */
-	--color-link: oklch(60% 0.35 45); /* Amarillo suave */
+	--color-bg-primary: oklch(21% 0.04 265);
+	--color-text-link: oklch(90% 0.3 265);
+	--color-text-primary: oklch(85% 0.04 265);
 }
