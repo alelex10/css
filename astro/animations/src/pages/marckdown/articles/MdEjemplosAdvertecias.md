@@ -12,6 +12,7 @@ Usando **códigos de bloque** con emojis o clases para estilos:
 No borrar la sección *Configuración*.
 ```
 
+
 ```error
 ❌ **ERROR 404**:  
 El archivo `src/script.js` no se encuentra.  

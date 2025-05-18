@@ -3,6 +3,13 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
+	build: {
+		viewTransitions: {
+			// Define animaciones de fallback
+			fallbackName: "default",
+			fallbackDuration: 300,
+		},
+	},
 	vite: {
 		plugins: [tailwindcss()],
 	},

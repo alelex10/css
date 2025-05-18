@@ -1,7 +1,6 @@
 import type { menu } from "../types/sideBarTypes";
 
 export const sideBarData: menu[] = [
-	
 	{
 		title: "markdown",
 		options: [
@@ -38,6 +37,14 @@ export const sideBarData: menu[] = [
 			{
 				name: "text",
 				link: "/ux-ui/text/TextSection",
+			},
+			{
+				name: "view-transition-a",
+				link: "/ux-ui/view-transition/section/ViewTransitionA",
+			},
+			{
+				name: "view-transition-b",
+				link: "/ux-ui/view-transition/section/ViewTransitionB",
 			},
 		],
 	},
