@@ -1,0 +1,5 @@
+## Buenas Practicas
+
+### Eliminar una rama
+- Al terminar un _feat/_, puedes eliminar una rama si es que no se hara nada mas con esa rama
+- simepre intentar eliminar con -d primero y no con -D

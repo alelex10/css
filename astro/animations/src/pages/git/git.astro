@@ -1,0 +1,12 @@
+---
+import Layout from "../layout.astro";
+const articulos = await Astro.glob("./article/*.md");
+const [BunasPracticas, ComandosArticle] = articulos.map((articulo) => articulo.Content);
+---
+
+<Layout>
+	<h1>Git</h1>
+	<ComandosArticle />
+	<BunasPracticas />
+    
+</Layout>

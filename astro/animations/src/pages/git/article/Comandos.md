@@ -1,0 +1,5 @@
+## Comandos
+
+### listar ramas remotas
+Para listar ramas remotas puedo usar **`git ls-remote`**
+- luego si quiero traerme unsa rama remota puedo **`git fetch origin heads/<nombre-rama-remota>:<nombre-rama-nueva>`**

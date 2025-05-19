@@ -1,5 +1,5 @@
 import type { menu } from "../types/sideBarTypes";
-
+/* mejorar los nombres de las paginas */
 export const sideBarData: menu[] = [
 	{
 		title: "markdown",
@@ -46,6 +46,19 @@ export const sideBarData: menu[] = [
 				name: "view-transition-b",
 				link: "/ux-ui/view-transition/section/ViewTransitionB",
 			},
+			{
+				name: "css",
+				link: "/ux-ui/css/css-page",
+			}
+		],
+	},
+	{
+		title: "git",
+		options: [
+			{
+				name: "comandos",
+				link: "/git/git",
+			}
 		],
 	},
 ];
