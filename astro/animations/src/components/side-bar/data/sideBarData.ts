@@ -49,6 +49,10 @@ export const sideBarData: menu[] = [
 			{
 				name: "css",
 				link: "/ux-ui/css/css-page",
+			},
+			{
+				name: "ejemplos",
+				link: "/ux-ui/css/sections/examples/examples",
 			}
 		],
 	},
@@ -58,6 +62,15 @@ export const sideBarData: menu[] = [
 			{
 				name: "comandos",
 				link: "/git/git",
+			}
+		],
+	},
+	{
+		title: "preguntas",
+		options: [
+			{
+				name: "preguntas",
+				link: "/questions/questions",
 			}
 		],
 	},
