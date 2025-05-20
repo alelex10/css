@@ -1,0 +1,21 @@
+---
+// src/components/Sidebar.astro
+import { getCollection } from "astro:content";
+
+const docs = await getCollection("docs");
+
+// Ordenamos por el campo `order`
+const sortedDocs = docs.sort((a, b) => a.data.order - b.data.order);
+---
+
+<aside class="w-64 bg-gray-100 p-4 border-r h-full">
+	<nav class="space-y-2">
+		{
+			sortedDocs.map((doc) => (
+				<a href={`/docs/${doc.id}`} class="block text-gray-800 hover:underline">
+					{doc.data.title}
+				</a>
+			))
+		}
+	</nav>
+</aside>
